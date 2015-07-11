@@ -1,0 +1,7 @@
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.exe.config
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.exe
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.pdb
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.csprojResolveAssemblyReference.cache
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.exe
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.pdb
+I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.g.resources

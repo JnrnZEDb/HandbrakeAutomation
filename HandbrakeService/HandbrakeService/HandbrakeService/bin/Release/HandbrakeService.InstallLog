@@ -1,0 +1,74 @@
+﻿Installing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Rolling back assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Rolling back assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Rolling back assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+An exception occurred during the Rollback phase of the System.ServiceProcess.ServiceProcessInstaller installer.
+System.NullReferenceException: Object reference not set to an instance of an object.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Installing service Handbrake Listener...
+Creating EventLog source Handbrake Listener in log Application...
+Rolling back assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Restoring event log to previous state for source Handbrake Listener.
+Installing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Installing service Handbrake Listener...
+Service Handbrake Listener has been successfully installed.
+Creating EventLog source Handbrake Listener in log Application...
+Committing assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Uninstalling assembly 'I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.InstallLog
+   assemblypath = I:\Documents\Projects\Handbrake\HandbrakeService\HandbrakeService\HandbrakeService\bin\Release\HandbrakeService.exe
+Removing EventLog source Handbrake Listener.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
