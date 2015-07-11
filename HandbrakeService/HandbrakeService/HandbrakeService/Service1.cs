@@ -84,10 +84,12 @@ namespace HandbrakeService
         {
             while (!FilesToConvert.Any() || IsRunning)
             {
+                 AddMissingItems();
+
                 System.Threading.Thread.Sleep(TimeSpan.FromMinutes(WaitInterval));
             }
-            
-         if (!IsRunning)
+
+            if (!IsRunning)
             {
                 IsRunning = true;
 
@@ -95,7 +97,7 @@ namespace HandbrakeService
 
                 //var outputPath = Path.Combine(tempTargetDirectory, Path.GetFileName(fileToConvert));
 
-                var outputFile = fileToConvert.Replace(SourceDirctory, TargetDirctory);                
+                var outputFile = fileToConvert.Replace(SourceDirctory, TargetDirctory);
 
                 var directory = Path.GetDirectoryName(fileToConvert);//Directory.GetDirectories(fileToConvert);
 
@@ -108,7 +110,7 @@ namespace HandbrakeService
                     Directory.CreateDirectory(tempTargetDirectory);
                 }
 
-                
+
 
                 while (IsFileLocked(fileToConvert))
                 {
@@ -124,6 +126,21 @@ namespace HandbrakeService
                     var p = Process.Start("HandBrakeCLI.exe", argument);
 
                     p.WaitForExit();
+
+                    if(p.ExitCode == 2)
+                    {
+                        var file = AppDomain.CurrentDomain.BaseDirectory + "\\log.txt";
+
+                        if(!File.Exists(file))
+                        {
+                            File.Create(file);
+                        }
+
+                        using (var sw = File.AppendText(file))
+                        {
+                            sw.WriteLine("Errored: " + fileToConvert);                         
+                        }
+                    }
                 }
 
                 IsRunning = false;
@@ -138,6 +155,54 @@ namespace HandbrakeService
                 ExecuteHandbrake();
             }
 
+        }
+
+        private void AddMissingItems()
+        {
+            var folders = Directory.GetDirectories(SourceDirctory);
+
+            if (folders.Any())
+            {
+                foreach (var folder in folders)
+                {
+                    var path = folder.Replace(SourceDirctory, TargetDirctory);
+
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    var files = Directory.EnumerateFiles(folder, "*.*", SearchOption.AllDirectories)
+                        .Where(a => a.EndsWith("avi") || a.EndsWith("flv")
+                        || a.EndsWith("mkv") || a.EndsWith("mov") || a.EndsWith("mpg")
+                        || a.EndsWith("rm") || a.EndsWith("wmv") || a.EndsWith("vob") || a.EndsWith("mp4")
+                        || a.EndsWith("m4v"));
+
+                    if (files.Any())
+                    {
+                        var message = string.Format("Found {0} file(s) in the '{1}' directory", files.Count(), folder);
+
+                        var outPutPath = System.IO.Path.Combine(path, System.IO.Path.GetFileName(folder));
+
+                        foreach (var file in files)
+                        {
+                            var targetPath = file.Replace(SourceDirctory, TargetDirctory);
+
+                            var replaceValue = Path.GetFileName(targetPath);
+
+                            var newValue = Path.GetFileNameWithoutExtension(targetPath) + ".mp4";
+
+                            targetPath = targetPath.Replace(replaceValue, newValue);
+
+                            if (!File.Exists(System.IO.Path.Combine(targetPath)))
+                            {
+                                FilesToConvert.Add(targetPath);                                
+                            }
+                        }
+                    }
+                }
+
+            }
         }
 
         protected override void OnStop()
