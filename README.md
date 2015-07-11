@@ -1,6 +1,6 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This is a Windows Service that listens for a specific folders and uses HandBrakeCLI.exe to compress to another location.
 
 ### What is this repository for? ###
 
