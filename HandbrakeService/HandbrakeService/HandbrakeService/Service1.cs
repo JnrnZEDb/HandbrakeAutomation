@@ -22,17 +22,19 @@ namespace HandbrakeService
 
         protected string ExtensionsToListenFor { get { return System.Configuration.ConfigurationManager.AppSettings["ExtensionsToListenFor"].ToString(); } }
 
-        Stack<string> FilesToConvert;
+        protected int WaitInterval { get { return int.Parse(System.Configuration.ConfigurationManager.AppSettings["WaitInterval"].ToString()); } }
 
-        Stack<FileSystemWatcher> Watchers;
+        List<string> FilesToConvert;
+
+        List<FileSystemWatcher> Watchers;
 
         public Service1()
         {
             InitializeComponent();
 
-            FilesToConvert = new Stack<string>();
+            FilesToConvert = new List<string>();
 
-            Watchers = new Stack<FileSystemWatcher>();
+            Watchers = new List<FileSystemWatcher>();
         }
 
         public void OnDebug()
@@ -58,7 +60,7 @@ namespace HandbrakeService
 
                 fileSystemWatcher.Created += FileSystemWatcher_Created;
 
-                Watchers.Push(fileSystemWatcher);
+                Watchers.Add(fileSystemWatcher);
             }
 
             ExecuteHandbrake();
@@ -71,7 +73,7 @@ namespace HandbrakeService
         {
             if (e.ChangeType == WatcherChangeTypes.Created)
             {
-                FilesToConvert.Push(e.FullPath);
+                FilesToConvert.Add(e.FullPath);
             }
         }
 
@@ -82,14 +84,18 @@ namespace HandbrakeService
         {
             while (!FilesToConvert.Any() || IsRunning)
             {
-                System.Threading.Thread.Sleep(TimeSpan.FromMinutes(5));
+                System.Threading.Thread.Sleep(TimeSpan.FromMinutes(WaitInterval));
             }
             
-            if (!IsRunning)
+         if (!IsRunning)
             {
                 IsRunning = true;
 
-                var fileToConvert = FilesToConvert.Pop();
+                var fileToConvert = FilesToConvert.First();
+
+                //var outputPath = Path.Combine(tempTargetDirectory, Path.GetFileName(fileToConvert));
+
+                var outputFile = fileToConvert.Replace(SourceDirctory, TargetDirctory);                
 
                 var directory = Path.GetDirectoryName(fileToConvert);//Directory.GetDirectories(fileToConvert);
 
@@ -102,9 +108,7 @@ namespace HandbrakeService
                     Directory.CreateDirectory(tempTargetDirectory);
                 }
 
-                var outputPath = Path.Combine(tempTargetDirectory, Path.GetFileName(fileToConvert));
-
-                var outputFile = outputPath;
+                
 
                 while (IsFileLocked(fileToConvert))
                 {
@@ -123,6 +127,8 @@ namespace HandbrakeService
                 }
 
                 IsRunning = false;
+
+                FilesToConvert.RemoveAt(0);
 
                 ExecuteHandbrake();
 
