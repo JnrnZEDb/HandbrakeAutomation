@@ -84,7 +84,7 @@ namespace HandbrakeService
         {
             while (!FilesToConvert.Any() || IsRunning)
             {
-                 AddMissingItems();
+                AddMissingItems();
 
                 System.Threading.Thread.Sleep(TimeSpan.FromMinutes(WaitInterval));
             }
@@ -127,19 +127,28 @@ namespace HandbrakeService
 
                     p.WaitForExit();
 
-                    if(p.ExitCode == 2)
+                    if (p.ExitCode == 2)
                     {
                         var file = AppDomain.CurrentDomain.BaseDirectory + "\\log.txt";
 
-                        if(!File.Exists(file))
+                        if (!File.Exists(file))
                         {
                             File.Create(file);
                         }
 
                         using (var sw = File.AppendText(file))
                         {
-                            sw.WriteLine("Errored: " + fileToConvert);                         
+                            sw.WriteLine("Errored: " + fileToConvert);
+
+
+                            var copyDestination = fileToConvert.Replace(SourceDirctory, TargetDirctory);
+
+                            File.Copy(fileToConvert, copyDestination);
+
+                            sw.WriteLine("-- Copied to: " + copyDestination);
                         }
+
+
                     }
                 }
 
@@ -196,7 +205,7 @@ namespace HandbrakeService
 
                             if (!File.Exists(System.IO.Path.Combine(targetPath)))
                             {
-                                FilesToConvert.Add(targetPath);                                
+                                FilesToConvert.Add(file);
                             }
                         }
                     }
