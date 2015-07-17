@@ -1158,3 +1158,13 @@ Errored: I:/Videos/My Movies\Big Hero 6 (2014)\Big Hero 6DVD-Rip.avi
 -- Copied to: J:/Videos/My Movies\Big Hero 6 (2014)\Big Hero 6DVD-Rip.avi
 Errored: I:/Videos/My Movies\Captain America The Winter Soldier (2014)\Captain America The Winter SoldierDVD-Rip.avi
 -- Copied to: J:/Videos/My Movies\Captain America The Winter Soldier (2014)\Captain America The Winter SoldierDVD-Rip.avi
+Errored: I:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x02 - The House of Black and White.mp4
+-- Copied to: J:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x02 - The House of Black and White.mp4
+Errored: I:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x03 - High Sparrow.mp4
+-- Copied to: J:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x03 - High Sparrow.mp4
+Errored: I:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x05 - Kill the Boy.avi
+-- Copied to: J:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x05 - Kill the Boy.avi
+Errored: I:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x06 - Unbowed, Unbent, Unbroken.avi
+-- Copied to: J:/Videos/Tv Shows\Game of Thrones\Game of Thrones - 5x06 - Unbowed, Unbent, Unbroken.avi
+Errored: I:/Videos/My Movies\Captain America The Winter Soldier (2014)\Captain America The Winter SoldierDVD-Rip.avi
+-- Copied to: J:/Videos/My Movies\Captain America The Winter Soldier (2014)\Captain America The Winter SoldierDVD-Rip.avi

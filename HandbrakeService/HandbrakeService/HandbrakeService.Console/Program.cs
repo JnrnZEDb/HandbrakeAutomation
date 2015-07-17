@@ -1,48 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HandbrakeService
+namespace HandbrakeService.Console
 {
-    public partial class Service1 : ServiceBase
+    class Program
     {
-        protected string CurrentDirctory { get { return AppDomain.CurrentDomain.BaseDirectory; } }
-
-        protected string SourceDirctory { get { return System.Configuration.ConfigurationManager.AppSettings["SourceFolder"].ToString(); } }
-
-        protected string TargetDirctory { get { return System.Configuration.ConfigurationManager.AppSettings["TargetFolder"].ToString(); } }
-
-        protected string ExtensionsToListenFor { get { return System.Configuration.ConfigurationManager.AppSettings["ExtensionsToListenFor"].ToString(); } }
-
-        protected int WaitInterval { get { return int.Parse(System.Configuration.ConfigurationManager.AppSettings["WaitInterval"].ToString()); } }
-
-        List<string> FilesToConvert;
-
-        List<FileSystemWatcher> Watchers;
-
-        public Service1()
+        static void Main(string[] args)
         {
-            InitializeComponent();
 
             FilesToConvert = new List<string>();
 
             Watchers = new List<FileSystemWatcher>();
-        }
 
-        public void OnDebug()
-        {
             OnStart(null);
         }
 
-        protected override void OnStart(string[] args)
+        protected static string CurrentDirctory { get { return AppDomain.CurrentDomain.BaseDirectory; } }
+
+        protected static string SourceDirctory { get { return System.Configuration.ConfigurationManager.AppSettings["SourceFolder"].ToString(); } }
+
+        protected static string TargetDirctory { get { return System.Configuration.ConfigurationManager.AppSettings["TargetFolder"].ToString(); } }
+
+        protected static string ExtensionsToListenFor { get { return System.Configuration.ConfigurationManager.AppSettings["ExtensionsToListenFor"].ToString(); } }
+
+        protected static int WaitInterval { get { return int.Parse(System.Configuration.ConfigurationManager.AppSettings["WaitInterval"].ToString()); } }
+
+        static List<string> FilesToConvert;
+
+        static List<FileSystemWatcher> Watchers;
+
+        protected static void OnStart(string[] args)
         {
             var filters = ExtensionsToListenFor.Split(new string[] { "|", "," }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -66,10 +59,9 @@ namespace HandbrakeService
             ExecuteHandbrake();
         }
 
+        private static bool IsRunning { get; set; }
 
-        private bool IsRunning { get; set; }
-
-        private void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
+        private static void FileSystemWatcher_Created(object sender, FileSystemEventArgs e)
         {
             if (e.ChangeType == WatcherChangeTypes.Created)
             {
@@ -78,9 +70,9 @@ namespace HandbrakeService
         }
 
 
-        string fileToConvert = "";
+        static  string fileToConvert = "";
 
-        private void ExecuteHandbrake()
+        private static void ExecuteHandbrake()
         {
             while (!FilesToConvert.Any() || IsRunning)
             {
@@ -166,7 +158,7 @@ namespace HandbrakeService
 
         }
 
-        private void AddMissingItems()
+        private static void AddMissingItems()
         {
             var folders = Directory.GetDirectories(SourceDirctory);
 
@@ -214,17 +206,11 @@ namespace HandbrakeService
             }
         }
 
-        protected override void OnStop()
-        {
-            foreach (var fsw in Watchers)
-            {
-                fsw.Dispose();
-            }
-        }
+         static int ERROR_SHARING_VIOLATION = 32;
 
-        const int ERROR_SHARING_VIOLATION = 32;
-        const int ERROR_LOCK_VIOLATION = 33;
-        private bool IsFileLocked(string file)
+         static int ERROR_LOCK_VIOLATION = 33;
+
+        private static bool IsFileLocked(string file)
         {
             //check that problem is not in destination file
             if (File.Exists(file) == true)
@@ -252,6 +238,5 @@ namespace HandbrakeService
             }
             return false;
         }
-
     }
 }
