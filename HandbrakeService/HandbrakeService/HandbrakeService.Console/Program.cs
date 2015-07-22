@@ -78,7 +78,8 @@ namespace HandbrakeService.Console
             {
                 AddMissingItems();
 
-                System.Threading.Thread.Sleep(TimeSpan.FromMinutes(WaitInterval));
+                System.Threading.Thread.Sleep(TimeSpan.FromMinutes(WaitInterval));                        
+                       
             }
 
             if (!IsRunning)
@@ -139,9 +140,9 @@ namespace HandbrakeService.Console
 
                             sw.WriteLine("-- Copied to: " + copyDestination);
                         }
-
-
                     }
+
+                    Microsoft.VisualBasic.FileIO.FileSystem.DeleteFile(fileToConvert, Microsoft.VisualBasic.FileIO.UIOption.OnlyErrorDialogs, Microsoft.VisualBasic.FileIO.RecycleOption.SendToRecycleBin);
                 }
 
                 IsRunning = false;
@@ -195,7 +196,8 @@ namespace HandbrakeService.Console
 
                             targetPath = targetPath.Replace(replaceValue, newValue);
 
-                            if (!File.Exists(System.IO.Path.Combine(targetPath)))
+                            if (!File.Exists(System.IO.Path.Combine(targetPath)) 
+                                && !File.Exists(targetPath.Replace(newValue, replaceValue)))
                             {
                                 FilesToConvert.Add(file);
                             }
