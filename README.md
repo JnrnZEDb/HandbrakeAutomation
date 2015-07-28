@@ -1,29 +1,7 @@
 # README #
 
-This is a Windows Service that listens for a specific folders and uses HandBrakeCLI.exe to compress to another location.
+This is a Windows Service/Console App that listens for a specific folders and uses HandBrakeCLI.exe to compress to another location.
 
-### What is this repository for? ###
+Still under development.  Current settings are stored in the app.config of each respectable program.  
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+File extensions may be a comma separated list to instantiate multiple listeners on a particular folder.
