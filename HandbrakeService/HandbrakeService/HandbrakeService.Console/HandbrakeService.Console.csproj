@@ -48,6 +48,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HandbrakeService.TargetOnly\HandbrakeService.Services.csproj">
+      <Project>{cb35cf76-90f0-4161-8200-c57e8dc9fe9e}</Project>
+      <Name>HandbrakeService.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

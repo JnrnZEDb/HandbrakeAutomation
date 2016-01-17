@@ -12,3 +12,10 @@ I:\Documents\Projects\Handbrake Automator\HandbrakeService\HandbrakeService\Hand
 I:\Documents\Projects\Handbrake Automator\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.pdb
 I:\Documents\Projects\Handbrake Automator\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.csprojResolveAssemblyReference.cache
 I:\Documents\Projects\Handbrake Automator\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.g.resources
+I:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.exe.config
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.exe.config
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.csprojResolveAssemblyReference.cache
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.exe
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\bin\Debug\HandbrakeService.pdb
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.exe
+D:\Documents\Projects\HandbrakeAutomator\HandbrakeService\HandbrakeService\HandbrakeService\obj\Debug\HandbrakeService.pdb
